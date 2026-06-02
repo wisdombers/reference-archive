@@ -266,35 +266,71 @@ export function Dashboard({ initialReferences, initialBoards, initialReferenceBo
   return (
     <main className={isSignedIn ? "shell" : "shell landing-shell"}>
       {!isSignedIn ? (
-        <section className="landing-board" id="login">
-          <div className="landing-copy">
-            <p className="eyebrow">Summer reference board</p>
-            <h1>Reference Archive</h1>
-            <p className="hero-kicker">영감이 쌓이는 나만의 개인 아카이브</p>
-            <div className="landing-notes" aria-hidden="true">
-              <span>campaign</span>
-              <span>copy</span>
-              <span>visual mood</span>
+        <section className="landing-board editorial-landing" id="login">
+          <nav className="landing-nav" aria-label="The Archive Room">
+            <a href="#login" className="landing-brand">
+              THE ARCHIVE ROOM
+            </a>
+            <div className="landing-menu" aria-hidden="true">
+              <span>VISUAL INDEX</span>
+              <span>NOTES</span>
+              <span>BOARDS</span>
+              <span>PRIVATE ROOM</span>
+            </div>
+          </nav>
+
+          <div className="landing-grid">
+            <div className="landing-copy">
+              <p className="eyebrow">Private visual archive</p>
+              <h1>
+                <span>THE</span>
+                <span>ARCHIVE</span>
+                <span>ROOM</span>
+              </h1>
+              <p className="landing-lines">
+                Collect references.
+                <br />
+                Arrange ideas.
+                <br />
+                Revisit your notes.
+              </p>
+              <p className="landing-korean">이미지, 카피, 캠페인 무드를 모아 나만의 시선으로 다시 꺼내보는 개인 아카이브</p>
+            </div>
+
+            <div className="hero-collage" aria-hidden="true">
+              <div className="visual-frame visual-frame-main">
+                <span>ARCHIVE 001</span>
+              </div>
+              <div className="visual-frame visual-frame-note">
+                <span>VISUAL NOTE</span>
+              </div>
+              <div className="archive-object">
+                <p>Save now</p>
+                <p>Find later</p>
+              </div>
+              <p className="vertical-label">CURATED ROOM / PRIVATE INDEX</p>
+            </div>
+
+            <div className="auth-card">
+              <div className="login-heading">
+                <p className="eyebrow">Enter the room</p>
+                <h2>Start your archive</h2>
+              </div>
+              <LoginForm />
             </div>
           </div>
-          <div className="hero-collage" aria-hidden="true">
-            <div className="collage-photo collage-photo-main" />
-            <div className="collage-photo collage-photo-small" />
-            <div className="collage-note">save now, find later</div>
-          </div>
-          <div className="auth-card">
-            <div className="login-heading">
-              <p className="eyebrow">Sign in</p>
-              <h2>아카이브 시작하기</h2>
-            </div>
-            <LoginForm />
-          </div>
+
+          <footer className="landing-meta" aria-hidden="true">
+            <span>ARCHIVE / NOTE / BOARD / BUILD / DREAM / HOME</span>
+            <span>PRIVATE VISUAL INDEX</span>
+            <span>2026 EDITION</span>
+          </footer>
         </section>
       ) : (
         <header className="topbar archive-header">
           <div className="brand">
             <p className="eyebrow">Personal archive</p>
-            <h1>Reference Archive</h1>
+            <h1>The Archive Room</h1>
             <p className="hero-kicker">영감이 쌓이는 나만의 개인 아카이브</p>
             <p className="session-label">현재 로그인: {userEmail}</p>
           </div>
